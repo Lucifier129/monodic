@@ -1,0 +1,91 @@
+{
+  "name": "monodic",
+  "version": "1.0.0",
+  "description": "Monorepo management tools",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "tsc -w --module commonjs",
+    "build": "tsc --module commonjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "lib",
+    "src",
+    "bin"
+  ],
+  "bin": {
+    "monodic": "./bin/scripts.js"
+  },
+  "keywords": [
+    "monorepo",
+    "code-sharing"
+  ],
+  "jest": {
+    "transform": {
+      ".(ts|tsx|js|jsx)": "ts-jest"
+    },
+    "testEnvironment": "jsdom",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 95,
+        "lines": 95,
+        "statements": 95
+      }
+    },
+    "collectCoverageFrom": [
+      "src/*.{js,ts}"
+    ]
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "author": "Jade Gu",
+  "license": "MIT",
+  "dependencies": {
+    "@types/cp-file": "^6.1.2",
+    "@types/ncp": "^2.0.4",
+    "chokidar": "^3.4.1",
+    "concurrently": "^5.1.0",
+    "cosmiconfig": "^6.0.0",
+    "cp-file": "^9.0.0",
+    "cpy": "^8.1.0",
+    "fs-extra": "^9.0.0",
+    "gh-pages": "^3.1.0",
+    "globby": "^11.0.0",
+    "ncp": "^2.0.0",
+    "prompts": "^2.3.2",
+    "query-string": "^6.12.1",
+    "read-pkg-up": "^7.0.1",
+    "yargs": "^15.3.1"
+  },
+  "devDependencies": {
+    "@types/concurrently": "^5.1.0",
+    "@types/fs-extra": "^8.1.0",
+    "@types/gh-pages": "^2.2.0",
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.11.1",
+    "@types/prompts": "^2.0.5",
+    "jest": "^25.3.0",
+    "jest-config": "^25.3.0",
+    "prettier": "^2.0.4",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^25.3.1",
+    "ts-node": "^8.8.2",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^9.0.0",
+    "typescript": "^3.8.3"
+  }
+}
